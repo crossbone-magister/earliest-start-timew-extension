@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/crossbone-magister/earliest-start/logic"
@@ -27,6 +28,6 @@ func main() {
 }
 
 func printErrorAndExit(err error) {
-	println("Error while parsing: ", err)
+	fmt.Printf("Error while parsing: %s\n", err)
 	os.Exit(1)
 }
