@@ -12,12 +12,12 @@ func FindEarliestStart(intervals []timewlib.Interval) timewlib.Interval {
 	return earliest_start
 }
 
-func FindLatestStop(intervals []timewlib.Interval) timewlib.Interval {
-	var latest_stop = intervals[0]
+func FindLatestEnd(intervals []timewlib.Interval) timewlib.Interval {
+	var latest_end = intervals[0]
 	for _, interval := range intervals {
-		if interval.EndHour() > latest_stop.EndHour() || (latest_stop.EndHour() == interval.EndHour() && interval.EndMinute() > latest_stop.EndMinute()) {
-			latest_stop = interval
+		if interval.EndHour() > latest_end.EndHour() || (latest_end.EndHour() == interval.EndHour() && interval.EndMinute() > latest_end.EndMinute()) {
+			latest_end = interval
 		}
 	}
-	return latest_stop
+	return latest_end
 }

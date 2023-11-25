@@ -20,15 +20,15 @@ func TestEarliestStart(t *testing.T) {
 	}
 }
 
-func TestLatestStop(t *testing.T) {
+func TestLatestEnd(t *testing.T) {
 	var latest_expected = timewlib.NewInterval(11, 0, 12, 0)
 	var intervals = []timewlib.Interval{
 		*timewlib.NewInterval(10, 00, 11, 00),
 		*latest_expected,
 		*timewlib.NewInterval(9, 0, 10, 0),
 	}
-	var latest_actual = logic.FindLatestStop(intervals)
+	var latest_actual = logic.FindLatestEnd(intervals)
 	if latest_actual.EndHour() != latest_expected.EndHour() && latest_actual.EndMinute() != latest_expected.EndHour() {
-		t.Errorf("Expected latest stop to be %s, found instead %s", latest_expected.String(), latest_actual.String())
+		t.Errorf("Expected latest end to be %s, found instead %s", latest_expected.String(), latest_actual.String())
 	}
 }
