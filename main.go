@@ -16,8 +16,8 @@ func main() {
 		if err == nil {
 			var earliest_start = logic.FindEarliestStart(intervals)
 			var latest_end = logic.FindLatestEnd(intervals)
-			println(output.FormatEarliestStart(earliest_start))
-			println(output.FormatLatestEnd(latest_end))
+			fmt.Println(output.FormatEarliestStart(earliest_start))
+			fmt.Println(output.FormatLatestEnd(latest_end))
 		} else {
 			printErrorAndExit(err)
 		}
